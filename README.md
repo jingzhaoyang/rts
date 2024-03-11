@@ -1,10 +1,10 @@
 # RTS = Real-Time Solutions
 
-Welcome
+Welcome! Talk to us on [Discussions](https://github.com/rts-cn/rts/discussions).
 
-欢迎
+欢迎，来[Discussions](https://github.com/rts-cn/rts/discussions)一起聊聊。
 
-歡迎
+歡迎，來[Discussions](https://github.com/rts-cn/rts/discussions)一起聊聊。
 
 Bienvenue
 
@@ -45,3 +45,6 @@ Please make a pull reqest to add your language.
 
 
 From 2020-02-20.
+
+
+Check the [Awesome FreeSWITCH List](https://github.com/rts-cn/awesome-freeswitch)
