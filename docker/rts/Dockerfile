@@ -3,8 +3,7 @@ LABEL maintainer="Seven Du <dujinfang@x-y-t.cn>"
 SHELL ["/bin/bash", "-c"]
 
 ADD . /usr/src/rts
-RUN ls /usr/src/rts
-COPY ./docker/rts/modules.conf /usr/src/rts/modules.conf
+RUN ls /usr/src/rts && cp /usr/src/rts/docker/rts/modules.conf /usr/src/rts/
 WORKDIR /usr/src/rts
 ENV PKG_CONFIG_PATH=/usr/local/mrcp/lib/pkgconfig:/usr/local/freeswitch/lib/pkgconfig
 
