@@ -30,7 +30,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./docker
+          context: .
           push: true
           file: ./docker/rts/Dockerfile
           tags: xswitch.tencentcloudcr.com/xswitch/rts:latest
