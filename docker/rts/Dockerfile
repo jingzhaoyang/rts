@@ -8,7 +8,7 @@ RUN ls ./ && cp ./docker/rts/modules.conf ./
 ENV PKG_CONFIG_PATH=/usr/local/mrcp/lib/pkgconfig:/usr/local/freeswitch/lib/pkgconfig
 
 RUN ./bootstrap.sh && \
-  ./configure --enable-core-odbc-support --enable-xzz-license; fi && \
+  ./configure --enable-core-odbc-support && \
   make -j $(nproc --all) && \
   make install
 
