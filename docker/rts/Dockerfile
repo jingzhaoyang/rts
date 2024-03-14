@@ -2,13 +2,12 @@ FROM xswitch.tencentcloudcr.com/xswitch/xswitch:bookworm as xswitch-build-bookwo
 LABEL maintainer="Seven Du <dujinfang@x-y-t.cn>"
 SHELL ["/bin/bash", "-c"]
 
-ADD . /usr/src/rts
-RUN ls /usr/src/rts && cp /usr/src/rts/docker/rts/modules.conf /usr/src/rts/
-WORKDIR /usr/src/rts
+COPY . .
+
+RUN ls ./ && cp ./docker/rts/modules.conf ./
 ENV PKG_CONFIG_PATH=/usr/local/mrcp/lib/pkgconfig:/usr/local/freeswitch/lib/pkgconfig
 
-RUN cd /usr/src/rts && \
-  ./bootstrap.sh && \
+RUN ./bootstrap.sh && \
   ./configure --enable-core-odbc-support --enable-xzz-license; fi && \
   make -j $(nproc --all) && \
   make install
