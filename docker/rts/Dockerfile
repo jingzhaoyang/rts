@@ -48,7 +48,7 @@ COPY --from=xswitch-build-bookworm /usr/local/lib /usr/local/lib
 COPY --from=xswitch-build-bookworm /usr/local/freeswitch /usr/local/freeswitch
 
 RUN ln -sf /usr/local/freeswitch/bin/freeswitch /usr/bin/ && \
-    ln -sf /usr/local/freeswitch/bin/fs_cli /usr/bin/ && \
-COPY docker/rts/docker-entrypoint.sh /docker-entrypoint.sh
+    ln -sf /usr/local/freeswitch/bin/fs_cli /usr/bin/
+COPY ./docker/rts/docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod a+x /docker-entrypoint.sh
 CMD ["/docker-entrypoint.sh"]
