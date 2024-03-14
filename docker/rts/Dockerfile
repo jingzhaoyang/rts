@@ -20,7 +20,9 @@ LABEL maintainer="Seven Du <dujinfang@x-y-t.cn>"
 SHELL ["/bin/bash", "-c"]
 
 RUN --mount=type=cache,target=/var/cache/apt,id=apt_cache,sharing=locked \
-  rm -rf /var/cache/apt/archives/lock && apt-get update && apt-get install -y \
+  rm -rf /var/cache/apt/archives/lock && \
+  sed -i 's/Components: main/Components: main contrib non-free non-free-firmware/g' /etc/apt/sources.list.d/debian.sources && \
+  apt-get update && apt-get install -y \
   --no-install-recommends --no-install-suggests --fix-missing \
   uuid zlib1g 'libjpeg8|libjpeg62-turbo' libpcap0.8 \
   libncurses5 libssl-dev libpcre3 libcurl4 \
